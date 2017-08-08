@@ -18,8 +18,8 @@ RUN apt-get update && apt-get install -y \
 	apt-get update && apt-get install -y \
 	hicolor-icon-theme \
 	remmina \
-	remmina-plugin-rdp \
+	remmina-plugin-rdp wget \
 	--no-install-recommends \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* && mkdir -p /home/svyat/go/bin/ && wget https://github.com/moul/advanced-ssh-config/releases/download/v2.6.0/assh_linux_amd64 && mv assh_linux_amd64 /home/svyat/go/bin/assh
 
 ENTRYPOINT [ "remmina" ]
